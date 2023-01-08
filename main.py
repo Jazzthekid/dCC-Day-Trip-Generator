@@ -1,10 +1,13 @@
 import random
 
 
-destinations = ['New York City', 'San Antonio', 'Atlanta', 'Cancun', 'San Jaun', 'Tokyo', 'Detroit', 'San Fransisco']
-restaurants = ['Katz Deli', 'The Barbecue Station', 'Bones Restaurant', 'Vagon Santurce', 'Shake Shack', 'Five Guys', ' Chipolte','Tempura Fukamachi']
-transportation = ['Car', 'Plane', 'Train', 'Bike', 'Klingon Transporter','Hover Bike', 'Millenium Falcon','DeLorean']
-entertainment = ['Mos Eisley Cantina', 'Comedy Club', 'Comic Convention', 'Concert', 'Circus', 'Science Fair', 'Drive-In Movie', 'Bowling']
+destinations = ['New York City', 'San Antonio', 'Atlanta', 'Cancun', 'San Jaun', 'Tokyo', 'Detroit', 'San Fransisco', 'Paris', 'Napal', 'Las Vegas', 'New Orleans', 'Chicago' ]
+restaurants = ['Katz Deli', 'The Barbecue Station', 'Bones Restaurant', 'Vagon Santurce', 'Shake Shack', 'Five Guys', ' Chipolte','Tempura Fukamachi' 'A Casa de Porco', 'Old Nola Cookery', 'PF Changs']
+transportation = ['Car', 'Plane', 'Train', 'Bike', 'Klingon Transporter','Hover Bike', 'Millenium Falcon','DeLorean', 'Tardis', 'Dragon', 'The Enterprise', 'Stargate' ]
+entertainment = ['Mos Eisley Cantina', 'Comedy Club', 'Comic Convention', 'Concert', 'Circus', 'Science Fair', 'Drive-In Movie', 'Bowling', 'Roller Skating', 'Axe Throwing', 'Escape Room','Paintball']
+
+
+
 
 
 def item_picker(list):
@@ -56,8 +59,8 @@ def accepting_day_trip():
     while user_picked == False:
         random_selections = day_trip_selections()
         print("")
-
         print(f'We have selected these choices for your day trip. Would you like to finalize your trip?' )
+        print("")
         user_choice = input('Type "Yes" to accept this trip or "No" to decline ')
     
         if user_choice == "Yes":
@@ -68,8 +71,9 @@ def accepting_day_trip():
         elif user_choice == "No":
             print("")
             print(f'Im Sorry, How about these selections?')
+            print("")
         else:
             print("Invalid Input")
+            user_picked = True
 
-day_trip_choice = accepting_day_trip()
-print(day_trip_choice)
+accepting_day_trip()
